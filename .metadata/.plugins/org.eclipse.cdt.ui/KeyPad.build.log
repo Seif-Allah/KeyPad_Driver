@@ -1,0 +1,46 @@
+16:17:23 **** Incremental Build of configuration Debug for project KeyPad ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+In file included from ../keypad.c:15:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building file: ../test.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"test.d" -MT"test.o" -c -o "test.o" "../test.c"
+Finished building: ../test.c
+ 
+Building target: KeyPad.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,KeyPad.map -mmcu=atmega32 -o "KeyPad.elf"  ./gpio.o ./keypad.o ./test.o   
+Finished building target: KeyPad.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S KeyPad.elf  >"KeyPad.lss"
+Finished building: KeyPad.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 KeyPad.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2386 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:17:24 Build Finished. 0 errors, 1 warnings. (took 865ms)
+
